@@ -13,5 +13,8 @@ node("docker") {
         sh 'docker build -t my-app .'
     }
     
+    stage('finish') {
+        sh 'docker ps -a'
+    }
 }
 

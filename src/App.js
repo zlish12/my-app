@@ -12,7 +12,13 @@ class App extends Component {
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-          This application is for learning and demonstration purposes.
+          <h2>
+            This application is for learning and demonstration purposes.
+          </h2>
+        <body>
+          <h3> Example of body text.
+          </h3>   
+        </body>
         </p>
       </div>
     );
