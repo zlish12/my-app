@@ -11,8 +11,7 @@ node("docker") {
     
     stage('docker build') {
         sh 'docker build -t my-app .'
-        sh 'docker run -it \ -v ${PWD}:/usr/src/app \ -v /usr/src/app/node_modules 
-            \ -p 3000:3000 \ --rm \ my-app'
+        sh 'docker run -it my-app'
     }
     
     stage('show docker containers and images') {
