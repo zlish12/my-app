@@ -1,6 +1,25 @@
 node("docker") {
-    
-    stage('checkout code') {
+     agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
+    /*stage('checkout code') {
         checkout scm
         sh 'ls -l'
     }
@@ -16,5 +35,5 @@ node("docker") {
     stage('show docker containers') {
         sh 'docker ps -a'
     }
-}
+}*/
 
