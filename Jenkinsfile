@@ -17,5 +17,10 @@ node("docker") {
         sh 'docker ps -a'
         sh 'docker images'
     }
+
+    stage('docker deploy')  {
+        sh "docker-compose down --remove-orphans"
+        sh "docker-compose up -d --force-recreate"
+    }
 }
 
