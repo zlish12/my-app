@@ -13,8 +13,8 @@ node("docker") {
         sh 'docker build -t my-app .'
     }
     
-    stage('check running containers') {
-        sh 'docker ps'
+    stage('show docker containers') {
+        sh 'docker ps -a'
     }
 }
 
