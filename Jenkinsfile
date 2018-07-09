@@ -9,9 +9,8 @@ node("docker") {
         sh 'docker version'    
     }
     
-    stage('docker build and run') {
+    stage('docker build') {
         sh 'docker build -t my-app .'
-        sh 'docker run --my-app'
     }
     
     stage('show docker containers and images') {
