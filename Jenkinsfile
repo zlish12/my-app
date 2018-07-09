@@ -16,15 +16,5 @@ node("docker") {
     stage('show docker containers') {
         sh 'docker ps -a'
     }
-    
-    stage('Deploy') {
-            when {
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-              }
-            }
-            steps {
-                sh 'make publish'
-    }
 }
 
