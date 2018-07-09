@@ -17,6 +17,7 @@ class App extends Component {
         <body>
           <h3> Example of body text.
           </h3>   
+          <img src={logo}/>
         </body>
         </p>
       </div>
