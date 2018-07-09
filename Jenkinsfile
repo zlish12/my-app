@@ -13,11 +13,8 @@ node("docker") {
         sh 'docker build -t my-app .'
     }
     
-    stage('show docker containers') {
+    stage('show docker containers and images') {
         sh 'docker ps -a'
-    }
-
-    stage('show docker image')
         sh 'docker images'
     }
 }
