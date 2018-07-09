@@ -16,5 +16,9 @@ node("docker") {
     stage('show docker containers') {
         sh 'docker ps -a'
     }
+
+    stage('show docker image')
+        sh 'docker images'
+    }
 }
 
