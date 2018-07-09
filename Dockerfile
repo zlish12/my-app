@@ -15,6 +15,3 @@ RUN npm install react-scripts@1.1.1 -g --silent
 
 # start app
 CMD ["npm", "start"]
-
-# Expose 8080
-EXPOSE 8080
