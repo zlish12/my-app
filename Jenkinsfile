@@ -5,7 +5,7 @@ node("docker") {
         sh 'ls -l'
     }
     
-    stage('test something') {
+    stage('check docker version') {
         sh 'docker version'    
     }
     
@@ -13,8 +13,8 @@ node("docker") {
         sh 'docker build -t my-app .'
     }
     
-    stage('finish') {
-        sh 'docker ps -a'
+    stage('check running containers') {
+        sh 'docker ps'
     }
 }
 
