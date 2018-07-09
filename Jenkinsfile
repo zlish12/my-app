@@ -11,16 +11,12 @@ node("docker") {
     
     stage('docker build') {
         sh 'docker build -t my-app .'
+        sh 'docker-compose up -d --build'
     }
     
     stage('show docker containers and images') {
         sh 'docker ps -a'
         sh 'docker images'
-    }
-
-    stage('docker deploy')  {
-        sh "docker-compose down --remove-orphans"
-        sh "docker-compose up -d --force-recreate"
     }
 }
 
