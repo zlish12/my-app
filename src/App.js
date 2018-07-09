@@ -8,11 +8,11 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Zachs Demo App</h1>
+          <h1 className="App-title">Welcome to my-app demo</h1>
         </header>
         <p className="App-intro">
           <h2>
-            This application is for learning and demonstration purposes.
+            This application is for my personal learning and demonstration purposes.
           </h2>
         <body>
           <h3> Example of body text.
