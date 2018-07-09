@@ -1,30 +1,21 @@
-pipeline {
-    agent {
-        docker {
-            image 'node:6-alpine'
-            args '-p 3000:3000'
-        }
+node("docker") {
+     
+    stage('checkout code') {
+        checkout scm
+        sh 'ls -l'
     }
-    environment { 
-        CI = 'true'
+    
+    stage('check docker version') {
+        sh 'docker version'    
     }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh './jenkins/scripts/test.sh'
-            }
-        }
-        stage('Deliver') { 
-            steps {
-                sh './jenkins/scripts/deliver.sh' 
-                input message: 'Finished using the web site? (Click "Proceed" to continue)' 
-                sh './jenkins/scripts/kill.sh' 
-            }
-        }
+    
+    stage('docker build') {
+        sh 'docker build -t my-app .'
+        sh 'docker run -d -it -p 80:8080 --name=app-c zlish12/my-app npm run ec2 -- --host=0.0.0.0'
+    }
+    
+    stage('show docker containers and images') {
+        sh 'docker ps -a'
+        sh 'docker images'
     }
 }
