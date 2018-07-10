@@ -11,7 +11,7 @@ node("docker") {
     
     stage('docker build') {
         sh 'docker build -t my-app .'
-        sh 'docker run -d -it -p 80:3000 --name=my-app my-app' 
+        sh 'docker run -d -it -p 80:3000 --name=myapp my-app' 
     }
     
     stage('show docker containers and images') {
