@@ -11,7 +11,7 @@ node("docker") {
     
     stage('docker build') {
         sh 'docker build -t my-app .'
-        sh 'docker rm $(docker ps -aq)'
+        sh 'docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
         sh 'docker run -d -p 80:80 --name=my-app my-app'
     }
     
