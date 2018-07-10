@@ -11,11 +11,7 @@ node("docker") {
     
     stage('docker build') {
         sh 'docker build -t my-app .'
-        /*sh 'docker run -d -it -p 80:8080 --name=app-c zlish12/my-app npm run ec2 -- --host=0.0.0.0'*/
-    }
-    stage('docker run') {
-        sh "docker-compose down --remove-orphans"
-        sh "docker-compose up -d --force-recreate"
+        sh 'docker run -p 80:3000' 
     }
     
     stage('show docker containers and images') {
