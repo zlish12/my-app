@@ -12,7 +12,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
           <h2>
-            This application is for my personal learning and demonstration purposes.
+            This application is my very first application and is for my personal learning and demonstration purposes. 
           </h2>
         <body>
           <h3> Example of body text.
