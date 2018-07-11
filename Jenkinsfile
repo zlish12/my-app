@@ -11,11 +11,10 @@ node("docker") {
     
     stage('docker build') {
         sh 'docker build -t my-app .'
-        sh 'docker-compose down --remove-orphans'
-        sh 'docker-compose up -d --force-recreate'
-        /*
+        /*sh 'docker-compose down --remove-orphans'
+        sh 'docker-compose up -d --force-recreate'*/
         sh 'docker stop $(docker ps -aq) && docker rm $(docker ps -aq)'
-        sh 'docker run -d -p 80:80 --name=my-app my-app'*/
+        sh 'docker run -d -p 80:80 --name=my-app my-app'
     }
     
     stage('show docker containers and images') {
